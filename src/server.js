@@ -1,5 +1,6 @@
 var http = require('http');
 var fs = require('fs')
+var querystring = require('querystring');
 var message = "Hello world! :D"
 var types = {
     css: 'text/css',
@@ -26,6 +27,19 @@ function handler(req, res) {
             }
             res.end(content);
         })
+    } else if (endpoint == "/create-post") {
+        var allTheData = "";
+        req.on('data', function(chunkOfData) {
+            allTheData += chunkOfData;
+        })
+        req.on('end', function() {
+            var convertedData = querystring.parse(allTheData);
+            console.log(convertedData.blogbost);
+            res.writeHead(301, { 'Location': '/' })
+            res.end();
+
+        })
+
     } else {
         fs.readFile(__dirname + '/../public' + endpoint, function(err, content) {
             console.log(fileType, endpoint)
