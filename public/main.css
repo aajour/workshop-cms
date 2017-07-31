@@ -2,70 +2,87 @@
 * Basic Resets
 ********************/
 
-body, html, div, label, p, h1, h2, h3, h4, h5, h6, form, a, input, textarea {
-	margin: 0; 
-	padding: 0; 
-	border: 0; 
-	outline: none;
+body,
+html,
+div,
+label,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+a,
+input,
+textarea {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
 }
 
-
 body {
-	line-height: 1;
-	font-size: 88%;
-	font-family: 'Open Sans', arial, sans-serif;
-	background: #FAFAFA;
-	color: #585858;
+    line-height: 1;
+    font-size: 88%;
+    font-family: 'Open Sans', arial, sans-serif;
+    background: #FAFAFA;
+    color: #585858;
 }
 
 div {
-	width: 100%;
+    width: 100%;
 }
 
-
-h1, h2, h3, h4, h5, h6 {
-	font-size: 100%;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
     padding: 23px 0;
-	margin: 0 15px;
-	color: #FF0040;
-	letter-spacing: 1px;
+    margin: 0 15px;
+    color: black;
+    letter-spacing: 1px;
 }
 
 h1 {
-	font-size: 32px;
+    font-size: 32px;
 }
 
 h2 {
-	font-size: 25px;
+    font-size: 25px;
 }
 
 main {
-	display: block;
-	width: 80%;
-	margin: 0 auto;
+    display: block;
+    width: 80%;
+    margin: 0 auto;
 }
+
 
 /*******************
 *  Header
 ********************/
 
-
 header {
-	background: #FF0040;
-	background: -webkit-linear-gradient(#F5A9BC, #FF0040);
-	background: -o-linear-gradient(#F5A9BC, #FF0040); 
-	background: -moz-linear-gradient(#F5A9BC, #FF0040);
-	background: linear-gradient(#F5A9BC, #FF0040);
+    background: gray;
+    background: -webkit-linear-gradient(#ecf0f1, gray);
+    background: -o-linear-gradient(#ecf0f1, gray);
+    background: -moz-linear-gradient(#ecf0f1, gray);
+    background: linear-gradient(#ecf0f1, gray);
 }
 
 .title {
-	color: white;
+    color: white;
 }
 
 .main-logo {
-	float: left;
-	width: 100px;
-	height: auto;
+    float: left;
+    width: 55px;
+    height: auto;
 }
 
 
@@ -74,31 +91,31 @@ header {
 ********************/
 
 .entry-container {
-	margin: 20px 0 50px;
+    margin: 20px 0 50px;
 }
 
 label {
-	width: 100%;
+    width: 100%;
 }
 
 .text-wrapper {
-	width: 80%;
+    width: 80%;
 }
 
 textarea {
-	width: 96%;
-	border-radius: 3px;
-	border: 1px solid #848484;
-	padding: 5px 2%;
+    width: 96%;
+    border-radius: 3px;
+    border: 1px solid #848484;
+    padding: 5px 2%;
 }
 
 button[type="submit"] {
-	background: #A5DF00;
-	background: -webkit-linear-gradient(#93C503, #ABCC4B);
-	background: -o-linear-gradient(#93C503, #ABCC4B);
-	background: -moz-linear-gradient(#93C503, #ABCC4B);
-	background: linear-gradient(#93C503, #ABCC4B);
-	border: none;
+    background: #A5DF00;
+    background: -webkit-linear-gradient(#93C503, #ABCC4B);
+    background: -o-linear-gradient(#93C503, #ABCC4B);
+    background: -moz-linear-gradient(#93C503, #ABCC4B);
+    background: linear-gradient(#93C503, #ABCC4B);
+    border: none;
     color: white;
     padding: 4px 25px;
     text-transform: uppercase;
@@ -108,24 +125,25 @@ button[type="submit"] {
     border-radius: 3px;
 }
 
+
 /*******************
 *  Posts
 ********************/
 
 hr {
-	background: #BDBDBD;
+    background: #BDBDBD;
 }
 
 .thumbnail {
-	float: left;
-	width: 50px;
-	height: auto;
-	margin-left: 3px;
-	margin-top: 3px;
+    float: left;
+    width: 50px;
+    height: auto;
+    margin-left: 3px;
+    margin-top: 3px;
 }
 
 .post {
-	width: 100%;
+    width: 100%;
     border: 1px solid #848484;
     float: left;
     margin: 2%;
@@ -137,11 +155,11 @@ hr {
 }
 
 .post p {
-	margin: 5px 10px;
+    margin: 5px 10px;
 }
 
 @media (min-width: 600px) {
-	 .post {
-		width: 28.9%;
-	}
+    .post {
+        width: 28.9%;
+    }
 }

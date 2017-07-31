@@ -14,7 +14,7 @@
 
         if (endpoint == '/') {
             handlers.handleHome(req, res);
-        } else if (endpoint == "/create-post") {
+        } else if (endpoint == "/create/post") {
             handlers.handlePost(req, res);
         } else {
             handlers.handlePublic(req, res);
