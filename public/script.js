@@ -5,12 +5,12 @@ $(document).ready(function() {
         success: function(data) {
 
             for (var blogPost in data) {
-                var postDiv         = document.createElement('div');
-                var postText        = document.createElement('p');
-                var thumbnail       = document.createElement('img');
-                var postContainer   = document.getElementsByClassName('post-container')[0];
+                var postDiv = document.createElement('div');
+                var postText = document.createElement('p');
+                var thumbnail = document.createElement('img');
+                var postContainer = document.getElementsByClassName('post-container')[0];
 
-                thumbnail.src = "./img/logo2.png";
+                thumbnail.src = "/img/logo2.png";
                 thumbnail.className = "thumbnail";
                 postText.innerHTML = data[blogPost];
                 postDiv.className = "post";
@@ -18,10 +18,10 @@ $(document).ready(function() {
                 postDiv.appendChild(thumbnail);
                 postDiv.appendChild(postText);
                 postContainer.appendChild(postDiv);
-                
+
             }
         },
-        error: function(error){
+        error: function(error) {
             console.log(error);
         }
     });

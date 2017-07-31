@@ -16,6 +16,8 @@
             handlers.handleHome(req, res);
         } else if (endpoint == "/create/post") {
             handlers.handlePost(req, res);
+        } else if (endpoint == "/posts") {
+            handlers.showPosts(req, res);
         } else {
             handlers.handlePublic(req, res);
         }

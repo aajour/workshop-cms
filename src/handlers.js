@@ -25,13 +25,41 @@ function handlePost(req, res) {
         allTheData += chunkOfData;
     })
     req.on('end', function() {
-        var convertedData = querystring.parse(allTheData);
+        var convertedData = querystring.parse(allTheData).post;
         console.log(convertedData.blogbost);
+        fs.readFile(__dirname + '/posts.json', function(err, content) {
+            var fcontent = JSON.parse(content);
+            var time = Date.now();
+            fcontent[time] = convertedData;
+            var toJson = JSON.stringify(fcontent);
+
+            fs.writeFile(__dirname + '/../src/posts.json', toJson, function(err, content) {
+                if (err) {
+                    console.log(err);
+                    return;
+                }
+
+                res.end(content);
+            });
+
+        })
         res.writeHead(301, { 'Location': '/' })
+
         res.end();
 
     })
 
+}
+
+function showPosts(req, res) {
+    res.writeHead(200, { 'Conten-Type': 'text/html' });
+    fs.readFile(__dirname + '/posts.json', function(err, content) {
+        if (err) {
+            res.end("<h1> Server down </h1>")
+            return;
+        }
+        res.end(content);
+    })
 }
 
 function handlePublic(req, res) {
@@ -44,8 +72,7 @@ function handlePublic(req, res) {
         console.log(fileType, endpoint)
         if (err) {
             res.writeHead(200, { 'Conten-Type': 'text/html' });
-            res.end("<h1>Sever down</h1>")
-            console.log("this is also happining")
+            res.end("<h1>Unreachable path!</h1>")
             return;
         }
         res.writeHead(200, { 'Content-Type': fileType })
@@ -56,5 +83,6 @@ function handlePublic(req, res) {
 module.exports = {
     handleHome: handleHome,
     handlePost,
-    handlePublic
+    handlePublic,
+    showPosts
 };
